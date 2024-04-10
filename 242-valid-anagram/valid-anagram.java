@@ -14,7 +14,6 @@ class Solution {
         }
         for(char i : sCharactedAndCount.keySet())
         {
-            System.out.println( i +"   "+tCharactedAndCount.getOrDefault(i , 0) +"   "+ sCharactedAndCount.getOrDefault(i , 0 ));
             if(tCharactedAndCount.getOrDefault(i , 0) < sCharactedAndCount.getOrDefault(i , 0 ))
             {
                 return false;
