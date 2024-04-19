@@ -14,7 +14,6 @@ class Solution {
                     oneCount++;
                 }
             }
-            System.out.println(oneCount);
             if(oneCount==k)
             {
                 ans+=nums.get(i);
