@@ -2,7 +2,6 @@ class Solution {
     public int sumIndicesWithKSetBits(List<Integer> nums, int k) {
         int ans=0;
         int oneCount=0;
-        ArrayList<Integer> curr=new ArrayList<>();
         for(int i=0;i<nums.size();i++)
         {
             String current=Integer.toBinaryString((i));
