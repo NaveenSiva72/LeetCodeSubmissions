@@ -9,7 +9,6 @@ class Solution {
         int sum=0;
         while(i<mat[0].length && j>=0)
         {
-            System.out.println(i +"  "+ j +"  "+ sum);
             if(i==j)
             {
                 sum+=mat[i][i];
