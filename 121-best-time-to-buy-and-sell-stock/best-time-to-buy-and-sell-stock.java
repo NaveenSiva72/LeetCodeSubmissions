@@ -6,20 +6,15 @@ class Solution {
         for (int i = 1; i < prices.length; i++) {
             if (prices[i] < min) {
                 min = prices[i];
-                gain = Math.max(curr, gain);
+                // gain = Math.max(curr, gain);
                 curr = 0;
             }
-            // else if(curr==0)
-            // {
-            //     min=prices[i];
-            // }
             else
             {
-                curr=Math.max(curr , prices[i] - min);
-
+                 gain = Math.max(gain, prices[i]-min);
             }
         }
-        gain = Math.max(curr, gain);
+        // gain = Math.max(curr, gain);
         return gain;
     }
 }
