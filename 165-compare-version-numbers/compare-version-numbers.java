@@ -3,11 +3,9 @@ class Solution {
         String[] v1 = version1.split("\\.");
         String[] v2 = version2.split("\\.");
         int i = 0;
-        System.out.println(Arrays.toString(v1) + "  " + Arrays.toString(v2));
         while (i < v1.length && i < v2.length) {
             long a = convertToInt(v1[i]);
             long b = convertToInt(v2[i]);
-            System.out.println(a + "  " + b);
             if (a < b) {
                 return -1;
             } else if (a > b) {
