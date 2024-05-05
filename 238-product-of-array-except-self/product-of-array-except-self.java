@@ -7,7 +7,6 @@ class Solution {
             ans[i]=ans[i-1]*nums[i-1];
         }
         int pro=nums[nums.length - 1];
-        System.out.println(Arrays.toString(ans));
         for(int i=nums.length - 2;i>=0;i--)
         {
             ans[i]=pro*ans[i];
