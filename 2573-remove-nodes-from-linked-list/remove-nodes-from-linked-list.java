@@ -27,15 +27,6 @@ class Solution {
         return reverse(temp1);
 
     }
-    public  void display(ListNode prev)
-    {
-        while(prev!=null)
-        {
-            System.out.print(prev.val + "->");
-            prev=prev.next;
-        }
-        System.out.println();
-    }
     public ListNode reverse(ListNode current)
     {
         ListNode prev=null;
