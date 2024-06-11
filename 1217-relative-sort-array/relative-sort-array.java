@@ -17,8 +17,6 @@ class Solution {
             }
             count++;
         }
-        System.out.println(Arrays.toString(arr1));
-        System.out.println(i +"  "+count);
         if(i<arr1.length)
         {
             cyclicSort(arr1 , i);
@@ -31,7 +29,7 @@ class Solution {
         for(int i=st;i<arr1.length;i++)
         {
             int j=i+1;
-            System.out.println(j +"  "+i+"  "+Arrays.toString(arr1));
+            
             while((j>st && j<arr1.length) && arr1[j - 1]>arr1[j])
             {
                 int temp=arr1[j];
