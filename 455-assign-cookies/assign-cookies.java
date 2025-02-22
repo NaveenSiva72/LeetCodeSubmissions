@@ -11,11 +11,8 @@ class Solution {
             {
                 ans++;
                 child++;
-                // cookie++;
             }
-            // else {
-                cookie++;
-            // }
+            cookie++;
         }
         return ans;
     }
