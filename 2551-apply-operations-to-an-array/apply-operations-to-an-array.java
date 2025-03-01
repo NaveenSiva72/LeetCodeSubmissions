@@ -12,7 +12,7 @@ class Solution {
         }
         int zeroCount=0;
         int insertPosi = 0;
-        System.out.println(Arrays.toString(nums));
+
         for(int i=0;i<nums.length;i++)
         {
             if(nums[i]!=0)
@@ -24,7 +24,7 @@ class Solution {
                 zeroCount++;
             }
         }
-        System.out.println(Arrays.toString(nums));
+
         int len = nums.length - 1;
         while(zeroCount > 0)
         {
