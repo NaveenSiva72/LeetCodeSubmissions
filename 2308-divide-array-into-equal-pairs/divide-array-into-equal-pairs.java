@@ -1,7 +1,6 @@
 class Solution {
     public boolean divideArray(int[] nums) {
         Arrays.sort(nums);
-        System.out.println(Arrays.toString(nums));
         int count=1;
         for(int i=1;i<nums.length;i++)
         {
