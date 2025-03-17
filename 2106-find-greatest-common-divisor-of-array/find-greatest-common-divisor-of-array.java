@@ -2,21 +2,17 @@ class Solution {
     public int findGCD(int[] nums) {
         int max =nums[0];
         int min=nums[0];
-       
 
         for(int i=1;i<nums.length;i++){
             if(nums[i]<min)
             {
-                
                 min=nums[i];
             
             }else if(nums[i]>max){
                 max=nums[i];
                 
             }
-            System.out.println(min+"  "+max);
         }
-        System.out.println(min+"  "+max);
         return gcd(min,max);
     }
 
@@ -30,7 +26,6 @@ class Solution {
             if(min%temp==0 && max%temp==0){
                 return temp;
             }
-            System.out.println(temp);
         }
         return 1;  
     }
