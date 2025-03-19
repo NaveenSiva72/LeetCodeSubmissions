@@ -26,9 +26,9 @@ class Solution {
     {
         String ans = "";
         arr.poll();
-        while (!arr.isEmpty()) { // Fix: Corrected while condition
-            char i = arr.poll(); // poll() directly removes and returns element
-            ans += i; // Append character to string
+        while (!arr.isEmpty()) { 
+            char i = arr.poll();
+            ans += i; 
         }
         return ans;
     }
