@@ -1,26 +1,18 @@
 class Solution {
-
     public int countDays(int days, int[][] meetings) {
-        int freeDays = 0, latestEnd = 0;
+        Arrays.sort(meetings , (a ,b) -> Integer.compare(a[0] , b[0]));
 
-        // Sort meetings based on starting times
-        Arrays.sort(meetings, Comparator.comparingInt(a -> a[0]));
-
-        for (int[] meeting : meetings) {
-            int start = meeting[0], end = meeting[1];
-
-            // Add current range of days without a meeting
-            if (start > latestEnd + 1) {
-                freeDays += start - latestEnd - 1;
+        int ans = 0;
+        int max = 0;
+        for(int i=0;i<meetings.length;i++){
+            if(meetings[i][0] > max){
+                ans += (meetings[i][0] - max - 1);
+                max = meetings[i][1];
+            }else if (meetings[i][1] > max){
+                max = meetings[i][1];
             }
-
-            // Update latest meeting end
-            latestEnd = Math.max(latestEnd, end);
         }
-
-        // Add all days after the last day of meetings
-        freeDays += days - latestEnd;
-
-        return freeDays;
+        ans += (days - max);
+        return ans;
     }
 }
