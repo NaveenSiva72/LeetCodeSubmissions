@@ -1,10 +1,8 @@
 class Solution {
     public List<Integer> findWordsContaining(String[] words, char x) {
         List<Integer> arr = new ArrayList<>();
-        int count;
-        String xx = x+"";
         for(int i=0;i<words.length;i++){
-            if(words[i].contains(xx)){
+            if (words[i].indexOf(x) != -1 ){
                 arr.add(i);
             }
 
