@@ -1,16 +1,21 @@
 class Solution {
     public String reverseWords(String s) {
-        String[] arr = s.trim().split("\\s+"); // Splits on multiple spaces
-        StringBuilder ans = new StringBuilder();
-        
-        for (int i = arr.length - 1; i >= 0; i--) {
-            ans.append(arr[i]);
-            if (i != 0) {
-                ans.append(" ");
+        int addCounter = 0;
+        StringBuilder ans = new StringBuilder("");
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)==' '){
+                if(addCounter == 0){
+                    continue;
+                }else{
+                    addCounter = 0;
+                    ans.insert(addCounter, ' ');
+                }
+                
+            }else{
+                ans.insert(addCounter++ , s.charAt(i));
             }
         }
-        
-        return ans.toString();
+        return ans.toString().trim();
         
     }
 }
