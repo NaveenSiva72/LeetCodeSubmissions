@@ -7,21 +7,16 @@ class Solution {
             arr[nums1[i]]++;
         }
 
-        ArrayList<Integer> ans1 = new ArrayList<>();
-
-        for(int i=0;i<nums2.length;i++){
-            if(arr[nums2[i]] > 0){
-                ans1.add(nums2[i]);
-                arr[nums2[i]]--;
+        int fre = 0;
+        for(int i : nums2){
+            if(arr[i]>0){
+                nums1[fre++] = i;
+                arr[i]--;
             }
         }
 
-        int[] ans = new int[ans1.size()];
-        for(int i=0;i<ans1.size();i++){
-            ans[i]=ans1.get(i);
-        }
-
-        return ans;
+        return Arrays.copyOfRange(nums1,0,fre);
+        
         
     }
 }
