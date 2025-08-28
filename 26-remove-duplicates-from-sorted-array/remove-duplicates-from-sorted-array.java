@@ -10,7 +10,7 @@ class Solution {
                 r++;
             }
         }
-        return (r);
+        return r;
         
     }
 }
