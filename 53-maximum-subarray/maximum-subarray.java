@@ -15,6 +15,6 @@ class Solution {
         return max;
     }
 
-    // Time complexity - o(n)
-    // Space complexity - o(1)
+    // Time complexity - O(n)
+    // Space complexity - oO1)
 }
