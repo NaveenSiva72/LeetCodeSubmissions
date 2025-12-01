@@ -16,10 +16,6 @@ class Solution {
                 
 
             }
-            // System.out.println(curr +" " + profit +" "+ min +" "+ i);
-            // System.out.println(profit);
-            // System.out.println(min);
-
         }
         return profit;
         
