@@ -1,21 +1,28 @@
 class Solution {
     public String reverseWords(String s) {
-        int addCounter = 0;
-        StringBuilder ans = new StringBuilder("");
-        for(int i=0;i<s.length();i++){
-            if(s.charAt(i)==' '){
-                if(addCounter == 0){
+        s = s.trim();
+        StringBuilder ans = new StringBuilder();
+        int insertPosition = 0;
+
+        for (int i = s.length() - 1; i >= 0; i--) {
+
+            if (s.charAt(i) == ' ') {
+                if (ans.charAt(ans.length() - 1) != ' ') {
+                    ans.insert(ans.length(), ' ');
+                } else {
                     continue;
-                }else{
-                    addCounter = 0;
-                    ans.insert(addCounter, ' ');
                 }
-                
+
             }else{
-                ans.insert(addCounter++ , s.charAt(i));
+                if(ans.length()>0 && ans.charAt((ans.length()-1)) == ' '){
+                    insertPosition = ans.length();
+                }
+                ans.insert(insertPosition, s.charAt(i));
             }
+            // System.out
+
         }
         return ans.toString().trim();
-        
+
     }
 }
