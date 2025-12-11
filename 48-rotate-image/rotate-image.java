@@ -7,11 +7,7 @@ class Solution {
                 matrix[i][j] = matrix[j][i];
                 matrix[j][i] = temp;
             }
-            // System.out.println(Arrays.deepToString(matrix));
-
         }
-        // System.out.println(Arrays.deepToString(matrix));
-
         for(int i=0;i<matrix[0].length;i++){
             int st=0;
             int end=matrix[0].length - 1;
