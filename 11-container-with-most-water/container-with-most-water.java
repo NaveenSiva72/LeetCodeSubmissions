@@ -8,13 +8,11 @@ class Solution {
         while(st < end){
             curr = Math.min(height[st],height[end]) * (end - st);
             max = Math.max(curr , max);
-
             if(height[st] < height[end]){
                 st++;
             }else{
                 end--;
             }
-            // System.out.println(curr +". "+ max +". "+st +".  "+end );
         }
         return max;
         
