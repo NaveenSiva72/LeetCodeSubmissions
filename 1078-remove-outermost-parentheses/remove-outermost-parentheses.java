@@ -1,17 +1,35 @@
 class Solution {
-    public String removeOuterParentheses(String s) {  
-        StringBuilder ans = new StringBuilder(); // Use StringBuilder for efficiency
-        int flag = 0;
+    public String removeOuterParentheses(String s) {
+        Queue<Character> arr = new LinkedList<>();
 
-        for (char curr : s.toCharArray()) { // Convert string to char array for faster access
-            if (curr == '(') {
-                if (flag > 0) ans.append(curr); // Append only non-outer '('
-                flag++;
-            } else { 
-                flag--;
-                if (flag > 0) ans.append(curr); // Append only non-outer ')'
+        int op= 0;
+        String ans = "";
+        for(int i=0;i<s.length();i++)
+        {
+            if(s.charAt(i)==')'){
+                op--;
+                if(op==0){
+                    ans = ans + putIntoQueue(arr);
+                }else{
+                    arr.add(')');
+                }
+            }else{
+                op++;
+                 arr.add('(');
+                
             }
         }
-        return ans.toString();
+        return ans;    
+    }
+    
+    public String putIntoQueue(Queue<Character> arr)
+    {
+        String ans = "";
+        arr.poll();
+        while (!arr.isEmpty()) { // Fix: Corrected while condition
+            char i = arr.poll(); // poll() directly removes and returns element
+            ans += i; // Append character to string
+        }
+        return ans;
     }
 }
