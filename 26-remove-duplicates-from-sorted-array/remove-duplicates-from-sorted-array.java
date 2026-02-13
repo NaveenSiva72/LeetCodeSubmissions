@@ -8,7 +8,7 @@ class Solution {
                 pos++;
             }
         }
-        return pos--;
+        return pos;
         
     }
 }
