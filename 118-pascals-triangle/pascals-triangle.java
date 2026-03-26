@@ -14,12 +14,9 @@ class Solution {
             for(int j=1;j<=i/2;j++){
                 curr.add(ans.get(i-1).get(j) + ans.get(i-1).get(j-1));
             }
-
             int pos;
-            int rem;
             if(i%2==0){
                 pos=(i/2)-1;
-                // rem = pos;
             }else{
                 pos=i/2;
             }
