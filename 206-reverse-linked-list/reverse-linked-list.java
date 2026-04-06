@@ -10,19 +10,22 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-        return reversedLinkedList(head);
-    }
-    public ListNode reversedLinkedList(ListNode current)
-    {
-        ListNode prev=null;
-        ListNode temp=null;
-        while(current!=null)
-        {
-            temp=current.next;
-            current.next=prev;
-            prev=current;
-            current=temp;
+        ListNode prev = null;
+        ListNode temp = null;
+
+        while(head!=null){
+            temp = head.next;
+            head.next = prev;
+            prev = head;
+            head = temp;
+
         }
+
         return prev;
+
+
+
+
+        
     }
 }
