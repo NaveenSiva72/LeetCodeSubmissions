@@ -1,36 +1,41 @@
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-        HashMap<String, List<String>> map = new HashMap<>();
-
-        StringBuilder curr = new StringBuilder("");
-        int[] cou = new int[26];
+        int[] arr = new int[26];
+        HashMap<String , List<String>> map = new HashMap<>();
+        StringBuilder key = new StringBuilder("");
         for(int i=0;i<strs.length;i++){
             for(int j=0;j<strs[i].length();j++){
-                cou[strs[i].charAt(j) - 'a'] = cou[strs[i].charAt(j) - 'a'] + 1;   
+                arr[strs[i].charAt(j) - 'a'] = ++arr[strs[i].charAt(j) - 'a'];
             }
-            for(int j=0;j<26;j++){
-                int a = (int)'a';
-                for(int k=cou[j];k>0;k--){
-                    Character b = (char)(a + j);
-                    curr.append(b);
-                    cou[j] = cou[j] - 1;
+
+            for(int k=0;k<26;k++){
+                if(arr[k]!=0){
+                    while(arr[k]>0){
+                        key.append((char)((k) + (int)('a')));
+                        --arr[k];
+                    }
                 }
+
             }
-            String curr2= curr.toString();
-            if(map.containsKey((curr2))){
-                map.get(curr2).add(strs[i]);
-                map.put(curr2, map.get(curr2));
-            }else{
-                List<String> sans = new ArrayList<>();
-                sans.add(strs[i]);
-                map.put(curr2, sans);
+
+            if(map.containsKey(key.toString())){
+                map.get(key.toString()).add(strs[i]);
+            }else
+            {
+                map.put(key.toString(), new ArrayList<>());
+                map.get(key.toString()).add(strs[i]);
+
             }
-            curr.setLength(0);
+            key.setLength(0);
         }
+
         List<List<String>> ans = new ArrayList<>();
-        for(String i : map.keySet()){
-            ans.add(map.get(i));
+        for(String k : map.keySet()){
+            ans.add(map.get(k));
+
         }
+
         return ans;
+        
     }
 }
